@@ -1,10 +1,14 @@
 # React redux todo app
 
-Source code for React redux todo app YouTube tutorial. Includes
+This is the result from this [repo](https://github.com/chrisblakely01/react-redux-todo-app).
+Probably it is not exactly as it is in original code source due I tried to complete it on my own first and then I watched the [tutorial](https://www.youtube.com/watch?v=fiesH6WU63I&ab_channel=ChrisBlakely) any way is working😎.
+ 
+ 
+Excellent tutorial helped me to got a better understood on how to implement toolkit. 
 
-- Finished source code
-- Starter code
-- An API
+👉Next step it to keep going with the second part : use thunk to consume an API 💪.
+
+
 
 ## Running the finished code
 
