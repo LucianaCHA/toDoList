@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AddTodoForm from './components/AddTodoForm';
 import TodoList from './components/TodoList';
 import TotalCompleteItems from './components/TotalCompleteItems';
+import Meter from './components/Meter';
 
 const App = () => {
 	return (
@@ -11,6 +12,7 @@ const App = () => {
 			<AddTodoForm />
 			<TodoList />
 			<TotalCompleteItems />
+			<Meter/>
 		</div>
 	);
 };

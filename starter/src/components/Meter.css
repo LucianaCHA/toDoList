@@ -1,0 +1,132 @@
+:root {
+  --height: 10px;
+  --width: 240px;
+  --bg-color: #dedede;
+  --bar-color: blue;
+  --alert-color: #ff3edc;
+  --radius: calc((var(--height)));
+}
+.moz {
+  background: var(--bg-color);
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--radius);
+}
+.moz::-moz-meter-bar {
+  background: var(--bar-color);
+  border-radius: var(--radius);
+}
+.tope:-moz-meter-optimum::-moz-meter-bar {
+  background: blue;
+  height: var(--height);
+  border: none;
+}
+.tope:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: blue;
+}
+.mix:-moz-meter-optimum::-moz-meter-bar {
+  background: var(--bg-color);
+  border: none;
+  height: var(--height);
+}
+meter {
+  margin-top: 20px;
+}
+
+/* fix para safari */
+@media not all and (min-resolution: 0.001dpcm) {
+  .webkit {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+.mix {
+  background: var(--bg-color);
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--radius);
+}
+.tope {
+  background: blue;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+.tope::-webkit-meter-bar {
+  background: blue;
+  height: var(--height);
+  border: none;
+}
+.tope::-webkit-meter-suboptimum-value {
+  background: blue;
+}
+
+.mix::-webkit-meter-bar {
+  background: var(--bg-color);
+  border: none;
+  height: var(--height);
+}
+.mix::-webkit-meter-optimum-value {
+  background: blue;
+  border-radius: var(--radius);
+}
+.graph {
+  width: calc(32px + var(--width));
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.graph .min,
+.graph .max {
+  display: flex;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: 30px;
+  width: 1px;
+  justify-content: center;  
+}
+.graph .alert::before {
+  content: "";
+  display: block;
+  background-color: fuchsia;
+  width: 17px;
+  height: var(--height);
+  position: absolute;
+  top: -11px;
+}
+.graph .min.alert::before {
+  left: 16px;
+  border-radius: var(--radius) 0 0 var(--radius);
+  z-index: 1;
+}
+.graph .max.alert::before {
+  right: 16px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.graph .min.ok::before {
+  left: 16px;
+  border-radius: var(--radius) 0 0 var(--radius);
+  z-index: 1;
+  content: "";
+  display: block;
+  background-color: white;
+  width: 16px;
+  height: var(--height);
+  position: absolute;
+  top: 20px;
+}
+
+.graph .max.ok::before {
+  right: 16px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  z-index: 1;
+  content: "";
+  display: block;
+  background-color: white;
+  width: 16px;
+  height: var(--height);
+  position: absolute;
+  top: 20px;
+} 
