@@ -133,6 +133,7 @@
 
 #tooltip[data-show] {
   display: block;
+  font-size: large;
 }
 
 #arrow,

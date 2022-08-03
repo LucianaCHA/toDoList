@@ -82,7 +82,8 @@ function show (){
   return salarios.map((salario) => (
     <div id="popover" key={salario.name}>
     <h6>{salario.name}{salario.salario} </h6>
-    <div id="tooltip" role="tooltip" style={{ fontSize:"12px" }} ></div>
+    <div id="tooltip" role="tooltip"> {salario.salario} </div>
+    console.log(salario.name);
         <span class={salario.salario < min ? "min alert" : "min ok" }>{min} </span>
         <meter
           className={salario.salario > max ? "tope" : "mix"}
