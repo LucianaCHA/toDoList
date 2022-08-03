@@ -16,6 +16,7 @@
   background: var(--bar-color);
   border-radius: var(--radius);
 }
+
 .tope:-moz-meter-optimum::-moz-meter-bar {
   background: blue;
   height: var(--height);
@@ -24,13 +25,11 @@
 .tope:-moz-meter-sub-sub-optimum::-moz-meter-bar {
   background: blue;
 }
+
 .mix:-moz-meter-optimum::-moz-meter-bar {
   background: var(--bg-color);
   border: none;
   height: var(--height);
-}
-meter {
-  margin-top: 20px;
 }
 
 /* fix para safari */
@@ -40,6 +39,7 @@ meter {
     appearance: none;
   }
 }
+
 .mix {
   background: var(--bg-color);
   width: var(--width);
@@ -66,10 +66,12 @@ meter {
   border: none;
   height: var(--height);
 }
+
 .mix::-webkit-meter-optimum-value {
   background: blue;
   border-radius: var(--radius);
 }
+
 .graph {
   width: calc(32px + var(--width));
   margin: 3rem auto;
@@ -77,6 +79,7 @@ meter {
   justify-content: center;
   position: relative;
 }
+
 .graph .min,
 .graph .max {
   display: flex;
@@ -84,29 +87,30 @@ meter {
   margin-right: -10px;
   margin-top: 30px;
   width: 1px;
-  justify-content: center;  
+  justify-content: center;
 }
+
 .graph .alert::before {
   content: "";
   display: block;
   background-color: fuchsia;
-  width: 17px;
+  width: 16px;
   height: var(--height);
   position: absolute;
-  top: -11px;
+  top: 20px;
 }
 .graph .min.alert::before {
-  left: 16px;
+  left: 10px;
   border-radius: var(--radius) 0 0 var(--radius);
   z-index: 1;
 }
 .graph .max.alert::before {
-  right: 16px;
+  right: 0;
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .graph .min.ok::before {
-  left: 16px;
+  left: 10px;
   border-radius: var(--radius) 0 0 var(--radius);
   z-index: 1;
   content: "";
@@ -117,16 +121,50 @@ meter {
   position: absolute;
   top: 20px;
 }
+#tooltip {
+  background: #333;
+  color: white;
+  font-weight: bold;
+  padding: 4px 8px;
+  font-size: 13px;
+  border-radius: 4px;
+  display: none;
+}
 
-.graph .max.ok::before {
-  right: 16px;
-  border-radius: 0 var(--radius) var(--radius) 0;
-  z-index: 1;
-  content: "";
+#tooltip[data-show] {
   display: block;
-  background-color: white;
-  width: 16px;
-  height: var(--height);
+}
+
+#arrow,
+#arrow::before {
   position: absolute;
-  top: 20px;
-} 
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+
+#arrow {
+  visibility: hidden;
+}
+
+#arrow::before {
+  visibility: visible;
+  content: "";
+  transform: rotate(45deg);
+}
+
+#tooltip[data-popper-placement^="top"] > #arrow {
+  bottom: -4px;
+}
+
+#tooltip[data-popper-placement^="bottom"] > #arrow {
+  top: -4px;
+}
+
+#tooltip[data-popper-placement^="left"] > #arrow {
+  right: -4px;
+}
+
+#tooltip[data-popper-placement^="right"] > #arrow {
+  left: -4px;
+}
